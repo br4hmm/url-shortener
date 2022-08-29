@@ -11,6 +11,10 @@ app.listen(
   console.log(`Listening for requests on port http://localhost:${PORT}`)
 );
 
+app.use(express.urlencoded({ extended: true }));
+
 app.get('/', (req, res) => {
   res.render('index');
 });
+
+app.post('/shortURL', (req, res) => {});
