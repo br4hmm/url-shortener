@@ -4,7 +4,7 @@ URL Shortener built with Express.js & MongoDB
 
 ## Demo
 
-![App Demo](./demo.gif)
+<span style="background: none">![App Demo](./demo.gif)</span>
 
 ## Usage
 
