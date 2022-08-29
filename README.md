@@ -4,7 +4,7 @@ URL Shortener built with Express.js & MongoDB
 
 ## Demo
 
-<span style="background: black">![App Demo](./demo.gif)</span>
+![App Demo](https://s6.gifyu.com/images/demo.gif)
 
 ## Usage
 
