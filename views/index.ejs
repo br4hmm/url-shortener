@@ -35,11 +35,17 @@
           </tr>
         </thead>
         <tbody>
+          <% urls.forEach(url => { %>
           <tr>
-            <td><a href="https://test.com">https://test.com</a></td>
-            <td><a href="/1234">1234</a></td>
-            <td>5</td>
+            <td>
+              <a href="<%= url.full %>" target="_blank"><%= url.full %></a>
+            </td>
+            <td>
+              <a href="<%= url.short %>" target="_blank"><%= url.short %></a>
+            </td>
+            <td><%= url.clicks %></td>
           </tr>
+          <% }); %>
         </tbody>
       </table>
     </div>

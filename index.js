@@ -21,11 +21,20 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 
-app.get('/', (req, res) => {
-  res.render('index');
+app.get('/', async (req, res) => {
+  const urls = await ShortURL.find();
+  res.render('index', { urls });
 });
 
 app.post('/shortURL', async (req, res) => {
   await ShortURL.create({ full: req.body.fullURL });
   res.redirect('/');
+});
+
+app.get('/:id', async (req, res) => {
+  const url = await ShortURL.findOne({ short: req.params.id });
+  if (url === null) return res.status(404).send('404 Not Found');
+  url.clicks++;
+  url.save(); // to save the new clicks value
+  res.redirect(url.full);
 });
