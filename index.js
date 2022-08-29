@@ -17,4 +17,6 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
-app.post('/shortURL', (req, res) => {});
+app.post('/shortURL', (req, res) => {
+  res.send(req.body);
+});
