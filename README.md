@@ -1,2 +1,3 @@
-# url-shortener
-URL Shortener built with Express.js &amp; MongoDB
+# URL Shortener
+
+URL Shortener built with Express.js & MongoDB
