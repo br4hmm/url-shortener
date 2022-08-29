@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const ShortURL = require('./models/shortURL');
+const morgan = require('morgan');
 
 require('dotenv').config();
 
@@ -16,7 +17,9 @@ mongoose
   .catch(err => console.log(err));
 
 app.set('view engine', 'ejs');
+
 app.use(express.urlencoded({ extended: true }));
+app.use(morgan('dev'));
 
 app.get('/', (req, res) => {
   res.render('index');
