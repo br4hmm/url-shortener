@@ -4,11 +4,11 @@ const shortid = require('shortid');
 const shortURLSchema = new mongoose.Schema({
   full: {
     type: String,
-    require: ture,
+    require: true,
   },
   short: {
     type: String,
-    require: ture,
+    require: true,
     default: shortid.generate,
   },
   clicks: {

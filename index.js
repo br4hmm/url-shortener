@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const ShortURL = require('./models/shortURL');
 
 require('dotenv').config();
 
@@ -7,19 +8,21 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const dbURI = process.env.MONGODB_CONNECTION_STRING;
 
-app.set('view engine', 'ejs');
-
 mongoose
   .connect(dbURI)
-  .then(result => app.listen(PORT))
+  .then(result =>
+    app.listen(PORT, console.log('MongoBD Connected Successfully!'))
+  )
   .catch(err => console.log(err));
 
+app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
   res.render('index');
 });
 
-app.post('/shortURL', (req, res) => {
-  res.send(req.body);
+app.post('/shortURL', async (req, res) => {
+  await ShortURL.create({ full: req.body.fullURL });
+  res.redirect('/');
 });
