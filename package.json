@@ -1,0 +1,29 @@
+{
+  "name": "url-shortener",
+  "version": "1.0.0",
+  "description": "URL Shortener built with Express.js & MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/br4hmm/url-shortener.git"
+  },
+  "keywords": [],
+  "author": "Ibrahim Abu Ghail <ibrahimghali211@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/br4hmm/url-shortener/issues"
+  },
+  "homepage": "https://github.com/br4hmm/url-shortener#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "mongoose": "^6.5.3"
+  }
+}
